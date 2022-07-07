@@ -113,6 +113,7 @@ class Backend {
     }
 
     init(services, backendOptions, i18nextOptions) {
+        if (typeof services === 'undefined') return;
         this.services = services;
         this.backendOptions = {
             ...defaultOptions,

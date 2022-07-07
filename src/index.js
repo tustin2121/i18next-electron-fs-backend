@@ -113,15 +113,10 @@ class Backend {
     }
 
     init(services, backendOptions, i18nextOptions) {
-        if (typeof window !== "undefined" && typeof window.api.i18nextElectronBackend === "undefined") {
-            throw "'window.api.i18nextElectronBackend' is not defined! Be sure you are setting up your BrowserWindow's preload script properly!";
-        }
-
         this.services = services;
         this.backendOptions = {
             ...defaultOptions,
             ...backendOptions,
-            i18nextElectronBackend: typeof window !== "undefined" ? window.api.i18nextElectronBackend : undefined
         };
         this.i18nextOptions = i18nextOptions;
 
